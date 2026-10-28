@@ -1,0 +1,127 @@
+{
+  "dataset_metadata": {
+    "title": "Taiwan Robbery and Snatch-and-Grab Crime Statistics (2015-2025)",
+    "statista_reference_id": "937687",
+    "statista_url": "https://www.statista.com/statistics/937687/taiwan-number-of-robbery-cases/",
+    "primary_sources": [
+      "Ministry of the Interior (MOI), Taiwan (R.O.C.)",
+      "National Police Agency (NPA), MOI",
+      "Directorate-General of Budget, Accounting and Statistics (DGBAS), Statistical Yearbook of the Republic of China"
+    ],
+    "coverage": "National total (Taiwan Area)",
+    "crime_classification": "Robbery (強盜) and Snatch-and-Grab / Forceful Seizure (搶奪)",
+    "temporal_scope": "2015 to 2025"
+  },
+  "records": [
+    {
+      "year": 2015,
+      "robbery_cases": 740,
+      "yoy_change_pct": null,
+      "solved_cases": 712,
+      "clearance_rate_pct": 96.2,
+      "population": 23492000,
+      "rate_per_100k": 3.15,
+      "notes": "Baseline year; traditional violent offenses already in multi-year decline."
+    },
+    {
+      "year": 2016,
+      "robbery_cases": 643,
+      "yoy_change_pct": -13.11,
+      "solved_cases": 624,
+      "clearance_rate_pct": 97.0,
+      "population": 23540000,
+      "rate_per_100k": 2.73,
+      "notes": "Expansion of urban cloud-based video surveillance networks."
+    },
+    {
+      "year": 2017,
+      "robbery_cases": 523,
+      "yoy_change_pct": -18.66,
+      "solved_cases": 512,
+      "clearance_rate_pct": 97.9,
+      "population": 23571000,
+      "rate_per_100k": 2.22,
+      "notes": "Steady decline in opportunistic street snatching."
+    },
+    {
+      "year": 2018,
+      "robbery_cases": 399,
+      "yoy_change_pct": -23.71,
+      "solved_cases": 393,
+      "clearance_rate_pct": 98.5,
+      "population": 23589000,
+      "rate_per_100k": 1.69,
+      "notes": "Annual cases dip below 400 nationwide for the first time."
+    },
+    {
+      "year": 2019,
+      "robbery_cases": 329,
+      "yoy_change_pct": -17.54,
+      "solved_cases": 324,
+      "clearance_rate_pct": 98.5,
+      "population": 23603000,
+      "rate_per_100k": 1.39,
+      "notes": "E-payment and mobile banking adoption reduces physical cash carrying."
+    },
+    {
+      "year": 2020,
+      "robbery_cases": 281,
+      "yoy_change_pct": -14.59,
+      "solved_cases": 279,
+      "clearance_rate_pct": 99.3,
+      "population": 23561000,
+      "rate_per_100k": 1.19,
+      "notes": "COVID pandemic onset; street mobility suppressed, clearance exceeds 99%."
+    },
+    {
+      "year": 2021,
+      "robbery_cases": 267,
+      "yoy_change_pct": -4.98,
+      "solved_cases": 265,
+      "clearance_rate_pct": 99.3,
+      "population": 23375000,
+      "rate_per_100k": 1.14,
+      "notes": "Level 3 epidemic alert in Taiwan; overall crime hits modern trough."
+    },
+    {
+      "year": 2022,
+      "robbery_cases": 233,
+      "yoy_change_pct": -12.73,
+      "solved_cases": 231,
+      "clearance_rate_pct": 99.1,
+      "population": 23264000,
+      "rate_per_100k": 1.00,
+      "notes": "Robbery rate reaches parity of 1 case per 100,000 citizens."
+    },
+    {
+      "year": 2023,
+      "robbery_cases": 209,
+      "yoy_change_pct": -10.30,
+      "solved_cases": 208,
+      "clearance_rate_pct": 99.5,
+      "population": 23420000,
+      "rate_per_100k": 0.89,
+      "notes": "Rate drops sub-1.0 per 100,000 population."
+    },
+    {
+      "year": 2024,
+      "robbery_cases": 151,
+      "yoy_change_pct": -27.75,
+      "solved_cases": 150,
+      "clearance_rate_pct": 99.3,
+      "population": 23405000,
+      "rate_per_100k": 0.65,
+      "notes": "Historic low in recorded Taiwan history (151 cases across 23.4M people)."
+    },
+    {
+      "year": 2025,
+      "robbery_cases": 248,
+      "yoy_change_pct": 64.24,
+      "solved_cases": 244,
+      "clearance_rate_pct": 98.4,
+      "population": 23380000,
+      "rate_per_100k": 1.06,
+      "notes": "Rebound from 2024 trough (+97 cases YoY), but remains 66.5% lower than 2015."
+    }
+  ]
+}
