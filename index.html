@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taiwan Crime Rate & Robbery Statistics (2015-2025) | Analytics Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="header-left">
+        <div class="badge-row">
+          <span class="badge badge-primary">ROC Ministry of the Interior</span>
+          <span class="badge badge-neutral">Statista ID: 937687</span>
+          <span class="badge badge-success">Top 3 Safest Countries Globally</span>
+        </div>
+        <h1 class="main-title">Taiwan Crime Rate & Robbery Analysis</h1>
+        <p class="subtitle">
+          Comprehensive 10-year longitudinal analysis (2015–2025) of robbery, violent crime, and macroeconomic criminal justice transitions across Taiwan.
+        </p>
+      </div>
+      <div class="header-actions">
+        <button id="btnExportCSV" class="btn" title="Export as CSV spreadsheet">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export CSV
+        </button>
+        <button id="btnExportJSON" class="btn" title="Export as JSON data">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Export JSON
+        </button>
+        <button id="btnPrint" class="btn btn-primary" title="Print or save as PDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print Report
+        </button>
+      </div>
+    </header>
+
+    <!-- Top KPI Cards -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">2025 Robbery Cases</span>
+          <span class="kpi-icon">🚨</span>
+        </div>
+        <div class="kpi-value" id="kpi-cases">248</div>
+        <div class="kpi-footer" id="kpi-cases-sub">Loading...</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">10-Year Trend Change</span>
+          <span class="kpi-icon">📉</span>
+        </div>
+        <div class="kpi-value text-positive" id="kpi-change">-66.5%</div>
+        <div class="kpi-footer" id="kpi-change-sub">Loading...</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Avg Police Clearance Rate</span>
+          <span class="kpi-icon">🛡️</span>
+        </div>
+        <div class="kpi-value text-positive" id="kpi-clearance">98.5%</div>
+        <div class="kpi-footer" id="kpi-clearance-sub">Loading...</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">Incidence per 100k</span>
+          <span class="kpi-icon">👥</span>
+        </div>
+        <div class="kpi-value" id="kpi-rate">1.06</div>
+        <div class="kpi-footer" id="kpi-rate-sub">Loading...</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-header">
+          <span class="kpi-label">All-Time Low (2024)</span>
+          <span class="kpi-icon">🏆</span>
+        </div>
+        <div class="kpi-value text-positive" id="kpi-record-low">151</div>
+        <div class="kpi-footer" id="kpi-record-low-sub">Loading...</div>
+      </div>
+    </section>
+
+    <!-- Charts Grid -->
+    <section class="charts-grid">
+      <!-- Main Trend Chart -->
+      <div class="chart-card col-8">
+        <div class="chart-header">
+          <div class="chart-title-group">
+            <h3>Robbery & Snatch-and-Grab Cases (2015–2025)</h3>
+            <p>Annual reported cases known to police alongside 3-year moving average</p>
+          </div>
+          <span class="badge badge-primary">Longitudinal Trend</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="robberyTrendChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Clearance Rate Chart -->
+      <div class="chart-card col-4">
+        <div class="chart-header">
+          <div class="chart-title-group">
+            <h3>Clearance Rate (破獲率)</h3>
+            <p>Percentage of cases solved by law enforcement</p>
+          </div>
+          <span class="badge badge-success">High Solve Rate</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="clearanceChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Macro Structural Shift Chart -->
+      <div class="chart-card col-8">
+        <div class="chart-header">
+          <div class="chart-title-group">
+            <h3>The Crime Structural Pivot: Physical vs Cyber/Fraud</h3>
+            <p>Collapse in street crime (robbery + theft) vs explosion in telecom & digital fraud (2015-2025)</p>
+          </div>
+          <span class="badge badge-neutral">Macro Transformation</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="crimeShiftChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Regional Distribution Chart -->
+      <div class="chart-card col-4">
+        <div class="chart-header">
+          <div class="chart-title-group">
+            <h3>Metropolitan Distribution</h3>
+            <p>Share of reported robbery cases across Special Municipalities</p>
+          </div>
+          <span class="badge badge-primary">6 Metro Cities</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="regionalChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="table-section">
+      <div class="table-header-controls">
+        <div class="chart-title-group">
+          <h3>Annual Crime Data Explorer (2015–2025)</h3>
+          <p>Verified figures from Taiwan National Police Agency (NPA) and Statista Dataset #937687</p>
+        </div>
+        <input type="text" id="tableSearch" class="search-box" placeholder="Search year or note keyword..." />
+      </div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Reported Cases</th>
+              <th>YoY Change</th>
+              <th>Solved Cases</th>
+              <th>Clearance Rate</th>
+              <th>Population</th>
+              <th>Rate / 100k</th>
+              <th>Policy & Contextual Notes</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Dynamically injected via app.js -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Analytical Deep Dive Cards -->
+    <section class="insights-grid">
+      <div class="insight-card">
+        <h4><span>📹</span> Cloud Video Surveillance & Technology Policing</h4>
+        <p>
+          Taiwan has built one of the densest municipal closed-circuit television (CCTV) and automated license plate recognition (ALPR) networks in the world. Street robbers and motorcycle bag-snatchers face virtually instant detection and tracking across intersections, elevating the clearance rate to 98%–99.5% and deterring opportunists.
+        </p>
+      </div>
+
+      <div class="insight-card">
+        <h4><span>💳</span> The Cashless Society Shift</h4>
+        <p>
+          Between 2015 and 2025, mobile payment penetration (Line Pay, JKO Pay, Apple Pay, Taiwan Pay) and contactless transit cards drastically reduced physical currency handled by citizens and small retail shops. With fewer cash targets on the street, physical robbery yielded diminishing returns for offenders.
+        </p>
+      </div>
+
+      <div class="insight-card">
+        <h4><span>🔄</span> Understanding 2024–2025 Dynamics</h4>
+        <p>
+          2024 recorded an all-time historical low of 151 robbery cases. The slight uptick to 248 cases in 2025 (+97 cases) reflects post-pandemic mobility normalization and enhanced statistical reporting precision, but remains 66.5% lower than the 740 cases recorded in 2015.
+        </p>
+      </div>
+
+      <div class="insight-card">
+        <h4><span>💻</span> The Pivot to Fraud & Cybercrime</h4>
+        <p>
+          While physical street crime dropped by over 50%, organized criminal elements shifted into telecommunications, crypto, and investment scams (詐欺), which grew +127%. In response, Taiwan enacted the 2024 Anti-Fraud Special Act (打詐專法) to pivot police resources toward financial intelligence and cyber enforcement.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <strong>Taiwan Crime Rate Analytics Project (2015–2025)</strong> • Primary Sources: 
+        <a href="https://www.statista.com/statistics/937687/taiwan-number-of-robbery-cases/" target="_blank" rel="noopener">Statista Dataset 937687</a>,
+        <a href="https://www.npa.gov.tw" target="_blank" rel="noopener">Taiwan National Police Agency (內政部警政署)</a>, and
+        <a href="https://www.dgbas.gov.tw" target="_blank" rel="noopener">Statistical Yearbook of the Republic of China (DGBAS)</a>.
+      </p>
+      <p>Data compiled for empirical criminological research and public policy intelligence.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
