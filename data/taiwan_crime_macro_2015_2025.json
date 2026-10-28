@@ -1,0 +1,112 @@
+{
+  "macro_trends": [
+    {
+      "year": 2015,
+      "total_crime": 297800,
+      "violent_crime": 1980,
+      "robbery_and_snatch": 740,
+      "theft": 64520,
+      "fraud": 21172,
+      "clearance_rate_total_pct": 92.5
+    },
+    {
+      "year": 2016,
+      "total_crime": 294831,
+      "violent_crime": 1620,
+      "robbery_and_snatch": 643,
+      "theft": 58214,
+      "fraud": 23175,
+      "clearance_rate_total_pct": 93.8
+    },
+    {
+      "year": 2017,
+      "total_crime": 293453,
+      "violent_crime": 1265,
+      "robbery_and_snatch": 523,
+      "theft": 51902,
+      "fraud": 22689,
+      "clearance_rate_total_pct": 94.6
+    },
+    {
+      "year": 2018,
+      "total_crime": 284334,
+      "violent_crime": 993,
+      "robbery_and_snatch": 399,
+      "theft": 45780,
+      "fraud": 23470,
+      "clearance_rate_total_pct": 95.1
+    },
+    {
+      "year": 2019,
+      "total_crime": 269219,
+      "violent_crime": 832,
+      "robbery_and_snatch": 329,
+      "theft": 41200,
+      "fraud": 23648,
+      "clearance_rate_total_pct": 96.2
+    },
+    {
+      "year": 2020,
+      "total_crime": 260378,
+      "violent_crime": 598,
+      "robbery_and_snatch": 281,
+      "theft": 36450,
+      "fraud": 23054,
+      "clearance_rate_total_pct": 97.8
+    },
+    {
+      "year": 2021,
+      "total_crime": 243010,
+      "violent_crime": 598,
+      "robbery_and_snatch": 267,
+      "theft": 32800,
+      "fraud": 24724,
+      "clearance_rate_total_pct": 98.8
+    },
+    {
+      "year": 2022,
+      "total_crime": 259657,
+      "violent_crime": 498,
+      "robbery_and_snatch": 233,
+      "theft": 34120,
+      "fraud": 29702,
+      "clearance_rate_total_pct": 96.4
+    },
+    {
+      "year": 2023,
+      "total_crime": 275268,
+      "violent_crime": 504,
+      "robbery_and_snatch": 209,
+      "theft": 33560,
+      "fraud": 37984,
+      "clearance_rate_total_pct": 97.1
+    },
+    {
+      "year": 2024,
+      "total_crime": 286400,
+      "violent_crime": 462,
+      "robbery_and_snatch": 151,
+      "theft": 31800,
+      "fraud": 46200,
+      "clearance_rate_total_pct": 96.8
+    },
+    {
+      "year": 2025,
+      "total_crime": 284900,
+      "violent_crime": 535,
+      "robbery_and_snatch": 248,
+      "theft": 32100,
+      "fraud": 48150,
+      "clearance_rate_total_pct": 97.2
+    }
+  ],
+  "regional_distribution_shares_pct": [
+    { "region": "New Taipei City (新北市)", "robbery_share_pct": 21.4, "population_share_pct": 17.2 },
+    { "region": "Taichung City (臺中市)", "robbery_share_pct": 18.2, "population_share_pct": 12.1 },
+    { "region": "Kaohsiung City (高雄市)", "robbery_share_pct": 16.5, "population_share_pct": 11.7 },
+    { "region": "Taipei City (臺北市)", "robbery_share_pct": 13.8, "population_share_pct": 10.7 },
+    { "region": "Taoyuan City (桃園市)", "robbery_share_pct": 12.1, "population_share_pct": 9.9 },
+    { "region": "Tainan City (臺南市)", "robbery_share_pct": 8.5, "population_share_pct": 8.0 },
+    { "region": "Other Counties & Islands (其他縣市離島)", "robbery_share_pct": 9.5, "population_share_pct": 30.4 }
+  ]
+}
