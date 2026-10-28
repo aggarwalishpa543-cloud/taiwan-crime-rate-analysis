@@ -1,0 +1,46 @@
+{
+  "timeframe": "2015-2025",
+  "total_years": 11,
+  "baseline_2015": 740,
+  "latest_2025": 248,
+  "net_change_cases": -492,
+  "net_change_pct": -66.49,
+  "cagr_pct": -10.36,
+  "mean_annual_cases": 365.7,
+  "median_annual_cases": 281,
+  "stdev_cases": 190.58,
+  "min_cases": {
+    "year": 2024,
+    "cases": 151
+  },
+  "max_cases": {
+    "year": 2015,
+    "cases": 740
+  },
+  "mean_clearance_rate_pct": 98.45,
+  "min_clearance_rate_pct": 96.2,
+  "max_clearance_rate_pct": 99.5,
+  "mean_rate_per_100k": 1.56,
+  "latest_rate_per_100k": 1.06,
+  "rolling_3yr_moving_avg": {
+    "2015": null,
+    "2016": null,
+    "2017": 635.3,
+    "2018": 521.7,
+    "2019": 417.0,
+    "2020": 336.3,
+    "2021": 292.3,
+    "2022": 260.3,
+    "2023": 236.3,
+    "2024": 197.7,
+    "2025": 202.7
+  },
+  "macro_shift": {
+    "street_crime_2015": 65260,
+    "street_crime_2025": 32348,
+    "street_crime_change_pct": -50.43,
+    "fraud_crime_2015": 21172,
+    "fraud_crime_2025": 48150,
+    "fraud_crime_change_pct": 127.42
+  }
+}
